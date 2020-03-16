@@ -8,6 +8,6 @@ class View
     {
         if(!empty($data))  extract($data);
 
-        require ('../views/' . $view . '.php');
+        include __DIR__ . '/../views/' . $view . '.php';
     }
 }
