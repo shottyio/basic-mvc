@@ -12,9 +12,9 @@ class App
     {
         $path = explode('/', $_SERVER['REQUEST_URI']);
 
-        if (!empty($path[1])) $this->controller = $path[1];
+        // if (!empty($path[1])) $this->controller = $path[1]; 
 
-        $controller = $this->controller($this->controller);
+        $controller = $this->controller($path[1] ?? $this->controller);
 
         if (!empty($path[2])) $this->action = $path[2];
 
